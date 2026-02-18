@@ -1,0 +1,149 @@
+*{
+    font-family: lato;
+    font-size: 12px;
+}
+.pageContainer{
+    display: flex;
+    flex-flow: column;
+    gap: 20px;
+}
+.selectDisplay{
+    display: flex;
+    gap: 2em;
+    flex-flow: column
+}
+.colors{
+    width: 60px;
+    height: 60px;
+    border-radius: 60px;
+    transition: 200ms ease;
+}
+
+.iptColor{
+    width: 22vw;
+    
+    height: 50px;
+    margin: auto;
+}
+#c1:hover, #c2:hover, #c3:hover, #c4:hover {
+    border: 1px solid #0707f3;
+    cursor: pointer;
+}
+.header{
+    width: 100%;
+}
+
+.cSelection{
+    display: flex;
+    
+    justify-content: center;
+    gap: 6px;
+}
+.cSelection > div{
+    flex-shrink: 0;
+}
+
+#c1{
+    background-color: #e73825;  
+    border: 1px solid black;  
+}
+
+#c2{
+    background-color: rgb(237, 168, 49);  
+    border: 1px solid black;  
+}
+#c3{
+    background-color: rgb(230, 237, 239);  
+    border: 1px solid black;  
+}
+#c4{
+
+    border: 1px solid rgb(242, 228, 228);   
+}
+
+.selectBox{
+    margin: 0px;
+    width: 22vw;
+    height: 90px;
+    border: 4.2px solid #292d3d;
+    background-color: #1b1d2c;
+    border-radius: 12px;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    
+    
+}
+.circle{
+    
+    flex-shrink: 0;
+    width: 4.9rem;
+    height: 4.9rem;
+    border: 4.2px solid #292d3d;
+    border-radius: 60px;
+}
+.PrimaryTxt{
+    
+    width: 8rem;
+    height: 1.2rem;
+    color:#ecedee;
+}
+
+.txtHex{
+    display: flex;
+    flex-flow: column;
+    gap:1.9em;
+    flex-shrink: 1;
+    color:#ecedee;
+}
+#c4{
+    text-align: center;
+    align-content: center;
+    color:#ecedee;
+}
+
+.icons{
+    margin-top: 1.9em;
+    align-self: center;
+    display: flex;
+    flex-flow: row;
+    gap:.4em;
+    flex-shrink: 1;
+    
+}
+
+
+
+
+
+
+.trash:hover, .edit:hover{
+    cursor: pointer;
+}
+@media (max-width: 1200px){
+
+    .selectBox{
+        width: 310px;
+       
+    }
+    .iptColor{
+        position: relative;
+        width: 310px;
+    }
+    .selectors{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+}
+
+.selectors{
+    display: flex;
+    
+    justify-content: center;
+    gap: 12px;
+}
