@@ -14,7 +14,7 @@ export default function Edit(props){
             renderer: 'svg',
             autoplay: false,
             loop: false,
-            path: '/edit.json'
+            path: `${import.meta.env.BASE_URL}edit.json`
         });
 
         return()=>{

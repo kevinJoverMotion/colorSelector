@@ -14,7 +14,7 @@ export default function Edit(props){
             renderer: 'svg',
             autoplay: false,
             loop: false,
-            path: '/trash.json'
+            path: `${import.meta.env.BASE_URL}trash.json`
         });
 
         return()=>{
