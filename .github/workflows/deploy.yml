@@ -1,6 +1,25 @@
+name: Deploy app01 to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: app01
     steps:
       - uses: actions/checkout@v4
 
@@ -8,15 +27,18 @@ jobs:
         with:
           node-version: 20
           cache: npm
+          cache-dependency-path: app01/package-lock.json
 
-      - name: Install
-        run: npm install
-        working-directory: app01
-
-      - name: Build
-        run: npm run build
-        working-directory: app01
+      - run: npm ci
+      - run: npm run build
 
       - uses: actions/upload-pages-artifact@v3
         with:
           path: app01/dist
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
