@@ -1,4 +1,4 @@
-name: Deploy app01 to GitHub Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
@@ -17,9 +17,6 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: app01
     steps:
       - uses: actions/checkout@v4
 
@@ -27,18 +24,16 @@ jobs:
         with:
           node-version: 20
           cache: npm
-          
 
       - run: npm ci
       - run: npm run build
 
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: app01/dist
+          path: dist
 
   deploy:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - id: deployment
-        uses: actions/deploy-pages@v4
+      - uses: actions/deploy-pages@v4
