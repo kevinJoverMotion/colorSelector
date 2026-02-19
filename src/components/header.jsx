@@ -4,7 +4,7 @@ export default function Header(){
     return(
 
        
-            <img src="/header.svg" class='header'/>
+            <img src="./public/header.svg" class='header'/>
 
        
 
