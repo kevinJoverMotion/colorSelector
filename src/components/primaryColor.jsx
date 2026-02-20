@@ -30,7 +30,9 @@ export default function Primary() {
       setIpt('visible');
     }else{
       setIpt('hidden');
+      
     }
+    document.querySelector(".iptColor").value = hex;
     setSelected(hex);
   };
 
@@ -97,6 +99,7 @@ export default function Primary() {
           style={{ visibility: ipt }}
           onChange = {handleInputColor} 
           onInput = {()=>{if(ipt == 'visible'){setIpt('hidden')}}}
+          
         />
 
         
