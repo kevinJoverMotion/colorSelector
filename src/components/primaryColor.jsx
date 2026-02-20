@@ -28,6 +28,8 @@ export default function Primary() {
     let hex = rgbToHex(color);
     if(e.currentTarget.id == 'c4'){
       setIpt('visible');
+    }else{
+      setIpt('hidden');
     }
     setSelected(hex);
   };
